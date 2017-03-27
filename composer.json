@@ -1,0 +1,21 @@
+{
+  "name": "vis/esputnik_client_l5",
+  "description": "eSputnik API library",
+  "authors": [
+    {
+      "name": "K.Gluschenko",
+      "email": "k.gluschenko@vis-design.com"
+    }
+  ],
+  "require": {
+    "vis/curl_client_l5": "1.*"
+  },
+  "autoload": {
+    "classmap": [
+      "src/Models"
+    ],
+    "psr-4": {
+      "Vis\\eSputnikClient\\": "src/"
+    }
+  }
+}
