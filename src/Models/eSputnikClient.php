@@ -69,6 +69,25 @@ class eSputnikClient
     }
 
     /**
+     * should this method be a method ?
+     * @param array $array
+     * @return array
+     */
+    private function prepareParams(array $array)
+    {
+        $params = [];
+
+        foreach($array as $key => $value){
+            $params[] = [
+                'key'   =>   $key,
+                'value' =>   $value ?: ""
+            ];
+        }
+
+        return $params;
+    }
+
+    /**
      * @link https://esputnik.com/api/methods.html#/v1/version-GET
      * @return mixed
      */
@@ -100,7 +119,7 @@ class eSputnikClient
         $preparedParams = [
             'email'      => $email,
             'recipients' => $recipients,
-            'params'     => $params
+            'params'     => $this->prepareParams($params)
         ];
 
         return $this->useCurl('POST', $url, [], $preparedParams);

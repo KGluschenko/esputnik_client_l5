@@ -2,7 +2,7 @@ eSputnik API library
 
 Add this to composer.json require section
 ```json
-     "vis/esputnik_client": "1.*"
+     "vis/esputnik_client_l5": "1.*"
 ```
 
 Execute
