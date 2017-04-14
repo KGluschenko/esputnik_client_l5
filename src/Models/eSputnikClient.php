@@ -1,4 +1,4 @@
-<? namespace Vis\eSputnikClient;
+<?php namespace Vis\eSputnikClient;
 
 use Illuminate\Support\Facades\Config;
 use Vis\CurlClient\CurlClient;
@@ -271,5 +271,4 @@ class eSputnikClient
     }
 
 }
-
 
