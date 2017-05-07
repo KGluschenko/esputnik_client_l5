@@ -18,7 +18,7 @@ class eSputnikClient
     {
         $this->apiUrl = 'https://esputnik.com/api/v1/';
 
-        $this->curl = New CurlClient();
+        $this->curl = new CurlClient();
         $this->curl->setRequestCredentials($this->getConfigValue('login'), $this->getConfigValue('password'))
                    ->setRequestHeader([
                         'Accept'       => 'application/json',
@@ -66,7 +66,13 @@ class eSputnikClient
      */
     private function useCurl($method, $url, $urlParams = [], $payload = [])
     {
-        return $this->curl->setRequestMethod($method)->setRequestUrl($url,$urlParams)->setRequestPayload($payload, 'json')->doCurlRequest();
+        $this->curl->setRequestMethod($method)->setRequestUrl($url,$urlParams)->setRequestPayload($payload, 'json')->doCurlRequest();
+
+        if($this->curl->isSuccessful()){
+            return $this->curl->getCurlResponseBody();
+        }
+
+        return $this->curl->getCurlResponse();
     }
 
     /**
