@@ -1,13 +1,8 @@
 eSputnik API library
 
-Add this to composer.json require section
-```json
-     "vis/esputnik_client_l5": "1.*"
-```
-
 Execute
 ```json
-    composer update
+    composer require "vis/esputnik_client_l5":"1.*"
 ```
 
 Add eSputnikClientServiceProvider to ServiceProviders in config/app.php
